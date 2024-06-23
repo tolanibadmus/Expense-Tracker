@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expense Tracker</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="body-div">
+    <h1>Monthly Expense Tracker</h1>
+    <form action="/earning" method="post">
+      <div class="div-container">
+        <div class="earningInput-div">
+          <label for="earning">Input Earning:</label>
+          <input type="text" placeholder="Input earning" id="earningInput" name="earning">
+        </div>
+        
+        <button id="earningButton">Log Earning</button>
+      </div>
+    </form>
+    
+    
+      <h2>Log your expense</h2>
+      <form action="/expense" method="post"> 
+        <div class="div-container">
+          <div class="expenseInput-div">
+            <label for="expense">Input Expense in GBP:</label>
+            <input type="text" placeholder="Input expense" id="expenseInput" name="expenseAmount">
+          </div>
+        
+          <div class="expensedropdown-div">
+            <label for="expense">Choose expense category:</label>
+            <select id="expense" name="expenseCategory" size="">
+              <option value="" disabled selected>Select expense category</option>
+              <option value="Travel expense">Travel expense</option>
+              <optionvalue="Mortgage/rent">Mortgage/Rent</option>
+              <option value="Council tax">Council tax</option>
+              <option value="Electricity">Electricity</option>
+              <option value="Gas">Gas</option>
+              <option value="Water bill">Water bill</option>
+              <option value="Internet">Internet</option>
+              <option value="Phone bill">Phone bill</option>
+              <option value="Petrol">Petrol</option>
+              <option value="Groceries">Groceries</option>
+              <option value="Subscriptions">Subscriptions</option>
+              <option value="Savings">Savings</option>
+              <option value="Eating out">Eating out</option>
+              
+              <option value="Gym membership">Gym membership</option>
+              <option value="Socializing">Socializing</option>
+              <option value="Credit card bill">Credit card bill</option>
+              <option value="Hobbies">Hobbies</option>
+              <option value="Home insurance">Home insurance</option>
+              <option value="Car insurance">Car insurance</option>
+              <option value="MOT and car service">MOT and car service</option>
+              <option value="Road Tax">Road Tax</option>
+              <option value="repairs">Repairs</option>
+              <option value="hairBeauty">Hair and beauty</option>
+              <option value="medical">Medical expense</option>
+              <option value="clothing">Clothing</option>
+              <option value="gifts">Gifts</option>
+              <option value="other">other</option> 
+            </select>
+          </div>  
+          <button id="expenseButton">Log Expense</button> 
+        </div>    
+      </form>
+    
+    <ul id="userExpenseInput">
+      <% expenseData.expenses.forEach(expense => { %>
+        <li>
+          <div class="li-span-container">
+            <span class="li-span"><%= expense.expenseCategory %></span>
+            <span class="li-span"><%= expense.expenseAmount %></span>
+          </div>
+          <form action="/delete/<%= expense._id %>" method="post">
+              <button class="delete-button">Delete Expense</button>
+          </form>
+        </li>
+      <% }) %> 
+    </ul>
+    
+
+
+    <div class="div-container, div-container-background">
+      <span>
+        <p class="bold-paragraph">Total Earning: GBP</p>
+        <p id="totalEarning" class="bold-paragraph"><%= expenseData.earning %></p>
+      </span>
+
+      <span>
+        <p class="bold-paragraph">Total Expense: GBP</p>
+        <p id="totalExpense" class="bold-paragraph"><%= totalExpenses %></p>
+      </span>
+
+      <span>
+        <p class="bold-paragraph">Balance: GBP</p>
+        <p id="balance" class="bold-paragraph"><%= balance %></p>
+      </span>
+    </div>
+    
+  </div>
+</body>
+</html>

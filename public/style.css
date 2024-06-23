@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&display=swap');
+
+body {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(13, 17, 18);
+  padding-top: 40px;
+}
+
+.body-div {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 16px 20px;
+  border-radius: 8px;
+}
+
+.div-container {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  margin-bottom: 12px;
+}
+
+label {
+  margin-bottom: 6px;
+}
+
+input, select {
+  padding: 8px 12px;
+  border-width: 1px;
+  border-color: lightblue;
+  border-style: solid;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+select option {
+  margin: 8px 0;
+  background-color: white
+}
+
+select option:hover {
+  padding: 4px 2px;
+  background-color: rgb(39, 88, 251);
+}
+
+select option:checked {
+  padding: 4px 2px;
+  background-color: rgb(39, 88, 251);
+}
+
+optgroup {
+  font-weight: 700;
+  color: white;
+}
+
+input:focus, select:focus {
+  border-width: 2px;
+  border-color: rgb(5, 43, 169);
+  outline: none;
+}
+
+.earningInput-div, .expenseInput-div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 4px;
+}
+
+.expensedropdown-div {
+  display: flex;
+  flex-direction: column;
+  margin-top: 12px;
+  margin-bottom: 12px 
+}
+
+button {
+  margin-top: 6px;
+  background-color: rgb(39, 88, 251);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  
+}
+
+p {
+  margin: 0px;
+  padding: 8px 0px;
+}
+
+.bold-paragraph {
+  font-weight: 600;
+}
+
+span {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  margin-top: 16px;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f2f2f2;
+  padding: 10px;
+  border: 1px solid #ebe9e9;
+  border-radius: 4px;
+  margin: 8px 0px;
+}
+
+.li-span {
+  margin-right: 20px;
+  align-items: center;
+}
+
+.div-container-background {
+  background-color: rgb(236, 238, 239);
+  padding: 12px 24px;
+  border-radius: 4px;
+  width: 450px;
+  margin-bottom: 20px;
+}
+
+.li-span-container{
+  display: flex;
+}
+
+.delete-button {
+  background-color: rgb(200, 3, 3);
+}
